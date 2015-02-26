@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap Nav Bar</title>
+   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+   <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="btn-group">
+   <button id='dropDown1' type="button" class="btn btn-default dropdown-toggle" 
+      data-toggle="dropdown">
+      <img id='selectedImg' src="icon/default_default.png">
+      <span id='selectedTxt'>
+      	default<span class="caret"></span>
+      </span>
+   </button>
+   <ul class="dropdown-menu" role="menu">
+      <li><a href="#"><img class='icon' src="icon/default_default.png">icon1</a></li>
+      <li><a href="#"><img class='icon' src="icon/event_default.png">icon2</a></li>
+      <li class="divider"></li>
+      <li><a href="#"><img class='icon' src="icon/event_default.png">icon4</a></li>
+   </ul>
+</div>
+<div class="btn-group">
+	<button type="button" id="btnConfirm" class="btn btn-primary">Confirm</button>
+</div>
+
+<div id='alert' class="alert alert-warning">
+   		<a href="#" class="close" data-dismiss="alert">
+      		&times;
+   		</a>
+   		<strong>警告！</strong>您的网络连接有问题。
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+var comboValue='default';
+$(".dropdown-menu li a").click(function(){
+	  var selText = $(this).text();
+	  var imgSrc=$(this).find('.icon').attr('src');
+	  comboValue=selText;
+	  $('#selectedTxt').html(selText+' <span class="caret"></span>');
+	  $("#selectedImg").attr('src',imgSrc);
+});
+
+$("#btnConfirm").click(function(){
+	alert($('#dropDown1').text());
+	$('#alert').show();
+});
+
+
+</script>

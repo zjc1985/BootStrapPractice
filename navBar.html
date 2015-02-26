@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap Nav Bar</title>
+   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+   <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="#">MapMarker</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav navbar-right">
+         <li class="active"><a href="#">Explore</a></li>
+         <li><a href="#">MyMap</a></li>
+      </ul>
+   </div>
+   <div>
+      <form class="navbar-form navbar-left" role="search">
+         <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search Place Here" size="50">
+         </div>
+         <button type="submit" class="btn btn-default">Search</button>
+      </form>    
+   </div>
+</nav>
+<div class="row">
+<div class="col-lg-2">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+</div><!-- /.col-lg-6 -->
+</div>
+</body>
+</html>

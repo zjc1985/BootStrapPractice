@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap Nav Bar</title>
+   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+   <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" 
+   data-target="#MarkerModel">
+   MarkerInfo
+</button>
+
+<div class="modal fade" id="MarkerModel" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            	Title
+            </h4>
+            <h5>Marker 1</h5>
+         </div>
+         <div class="modal-body">
+         	<div>Here's the detail description</div>
+            	
+         </div>
+         <div class="modal-footer">
+         	<button type="button" class="btn btn-primary">
+               	Copy
+            </button>
+            <button type="button" class="btn btn-default" data-toggle="modal" 
+   				data-target="#EditMarker">
+               	Edit
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+
+<div class="modal fade" id="EditMarker" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+            	Edit Form
+            </h4>
+            <h5>Marker 1</h5>
+         </div>
+         <div class="modal-body">
+         	<div>Here's the detail description</div>
+            	
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">
+               	Close
+            </button>
+            <button type="button" class="btn btn-primary">
+               	Edit
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+</script>
