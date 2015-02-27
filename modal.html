@@ -1,84 +1,269 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Bootstrap Nav Bar</title>
-   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
-   <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-   <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<title>Bootstrap Nav Bar</title>
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<button class="btn btn-primary btn-lg" data-toggle="modal"
+		data-target="#MarkerInfoModel" onClick="btnClick()">MarkerInfo</button>
 
-<button class="btn btn-primary btn-lg" data-toggle="modal" 
-   data-target="#MarkerModel">
-   MarkerInfo
-</button>
+	<div class="modal fade" id="MarkerInfoModel" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title markerInfoTitle">Title</h4>
+					<h5 class="markerInfoSubTitle">SubTitle</h5>
+				</div>
+				<div class="modal-body">
+					<div><p class="markerInfoDescription">
+						Here's the detail description
+					</p></div>
 
-<div class="modal fade" id="MarkerModel" tabindex="-1" role="dialog" 
-   aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" 
-               data-dismiss="modal" aria-hidden="true">
-                  &times;
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-            	Title
-            </h4>
-            <h5>Marker 1</h5>
-         </div>
-         <div class="modal-body">
-         	<div>Here's the detail description</div>
-            	
-         </div>
-         <div class="modal-footer">
-         	<button type="button" class="btn btn-primary">
-               	Copy
-            </button>
-            <button type="button" class="btn btn-default" data-toggle="modal" 
-   				data-target="#EditMarker">
-               	Edit
-            </button>
-         </div>
-      </div><!-- /.modal-content -->
-</div><!-- /.modal -->
-</div>
+					<div id="myCarousel" class="carousel slide" data-interval='false'>
 
-<div class="modal fade" id="EditMarker" tabindex="-1" role="dialog" 
-   aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog">
-      <div class="modal-content">
-         <div class="modal-header">
-            <button type="button" class="close" 
-               data-dismiss="modal" aria-hidden="true">
-                  &times;
-            </button>
-            <h4 class="modal-title" id="myModalLabel">
-            	Edit Form
-            </h4>
-            <h5>Marker 1</h5>
-         </div>
-         <div class="modal-body">
-         	<div>Here's the detail description</div>
-            	
-         </div>
-         <div class="modal-footer">
-            <button type="button" class="btn btn-default" 
-               data-dismiss="modal">
-               	Close
-            </button>
-            <button type="button" class="btn btn-primary">
-               	Edit
-            </button>
-         </div>
-      </div><!-- /.modal-content -->
-</div><!-- /.modal -->
-</div>
+						<ol class="carousel-indicators">
+							<!-- 
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							 -->
+						</ol>
+
+						<div class="carousel-inner">
+							<!-- 
+							<div class="item active">
+								<img
+									src="http://ac-6pzfpf5w.qiniudn.com/KDGIYFpJDTX51tBccgefzMeiT6G7EBUspg662TXj.JPG?imageView2/2/h/800"
+									alt="Second slide">
+							</div>
+							<div class="item">
+								<img
+									src="http://ac-6pzfpf5w.qiniudn.com/QVBjy0DvYqio8qfOHONqDSw3va6YaRWQRLvJ0rcO.JPG?imageView2/2/h/800"
+									alt="First slide">
+							</div>
+							-->
+						</div>
+						<a class="carousel-control left" href="#myCarousel"
+							data-slide="prev">&lsaquo;</a> <a class="carousel-control right"
+							href="#myCarousel" data-slide="next">&rsaquo;</a>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Copy</button>
+					<button type="button" class="btn btn-default" data-toggle="modal"
+						data-target="#EditMarker">
+						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Edit
+					</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+
+	<div class="modal fade" id="EditMarker" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Edit Marker</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="editTitle">Title:</label>
+							<input type="text" class="form-control editTitle" id="editTitle">
+						</div>
+						<div class="form-group">
+							<label for="editCost">Cost:</label> 
+							<div class="input-group">
+  								<span class="input-group-addon">$</span>
+  								<input id="editCost" type="text" class="form-control editCost" aria-label="Amount (to the nearest dollar)">
+  								<span class="input-group-addon">.00</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="editSlideNum">SlideNum:</label> 
+							<select id="editSlideNum" class="form-control editSlideNum">
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="editIcon">Icon:</label>
+							<div id="editIcon" class="btn-group">
+								<button id='dropDown1' type="button"
+									class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<img id='selectedImg' src="icon/default_default.png">
+									<span id='selectedTxt'>
+										default
+										<span class="caret"></span>
+									</span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+								</ul>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="editDescription">Description:</label> 
+							<textarea class="form-control editDesc" id="editDescription" rows="7" ></textarea>
+						</div>
+						
+						<div class="form-group">
+							<label for="imageUrls">ImageUrls (use ; to seperate) :</label> 
+							<textarea class="form-control editUrls" id="imageUrls" rows="5" ></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default pull-left"
+						data-dismiss="modal">Delete</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Cancel</button>
+					<button type="button" class="btn btn-primary">Confirm</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
 
 </body>
 </html>
 
 <script type="text/javascript">
+function MarkerInfo(id){
+	this.setTitle=function(str){
+		$('#'+id).find('.markerInfoTitle').text(str);
+	};
+	
+	this.setSubTitle=function(str){
+		$('#'+id).find('.markerInfoSubTitle').text(str);
+	};
+	
+	this.setDescription=function(str){
+		$('#'+id).find('.markerInfoDescription').text(str);
+	};
+	
+	this.setImageSlider=function(urls){
+		$('#'+id).find('.carousel-indicators').empty();
+		$('#'+id).find('.carousel-inner').empty();
+		
+		for(var i in urls){
+			var indicatorsHtml;
+			var imageItemHtml;
+			if(i==0){
+				indicatorsHtml="<li data-target='#myCarousel' data-slide-to='0' class='active'></li>";
+				imageItemHtml="<div class='item active'>"+
+					"<img src="+urls[i]+"></div>";
+			}else{
+				indicatorsHtml="<li data-target='#myCarousel' data-slide-to='"+i+"'></li>";
+				imageItemHtml="<div class='item'>"+
+					"<img src="+urls[i]+"></div>";
+			}
+			$('#'+id).find('.carousel-indicators').append(indicatorsHtml);
+			$('#'+id).find('.carousel-inner').append(imageItemHtml);
+		}
+	};
+};
+
+function MarkerEditor(id){
+	
+	this.setTitle=function(str){
+		$('#'+id).find('.editTitle').val(str);	
+	};
+	this.getTitle=function(){
+		return $('#'+id).find('.editTitle').val();
+	};
+	
+	this.setCost=function(str){
+		$('#'+id).find('.editCost').val(str);	
+	};
+	this.getCost=function(){
+		return $('#'+id).find('.editCost').val();
+	};
+	
+	this.setDesc=function(str){
+		$('#'+id).find('.editDesc').val(str);	
+	};
+	this.getDesc=function(){
+		return $('#'+id).find('.editDesc').val();
+	};
+	
+	this.setUrls=function(str){
+		$('#'+id).find('.editUrls').val(str);	
+	};
+	this.getUrls=function(){
+		return $('#'+id).find('.editUrls').val().split(";");
+	};
+	
+	this.setMaxSlideNum=function(maxNum){
+		$('#'+id).find('.editSlideNum').empty();
+		for(var i=1;i<maxNum+1;i++){
+			$('#'+id).find('.editSlideNum').append("<option value='"+i+"'>"+i+"</option>");
+		}	
+	};
+	
+	this.getSlideNum=function(){
+		return $('#'+id).find('.editSlideNum').val();
+	};
+	
+	this.setDropDownItems=function(items){
+		$('#'+id).find('.dropdown-menu').empty();
+		for(var i in items){
+			var itemHtml="<li><a href='#'><img class='icon' src='"+items[i].url+"'>"+items[i].name+"</a></li>";
+			$('#'+id).find('.dropdown-menu').append(itemHtml);
+		}
+		
+		$('#'+id).find(".dropdown-menu li a").click(function(){
+			  var selText = $(this).text();
+			  var imgSrc=$(this).find('.icon').attr('src');
+			  comboValue=selText;
+			  $('#selectedTxt').html(selText+' <span class="caret"></span>');
+			  $("#selectedImg").attr('src',imgSrc);
+		});
+	};
+	
+	this.getIconSelect=function(){
+		return {url: $("#selectedImg").attr('src'),
+			name: $('#selectedTxt').text().replace(/\s+/g,"")};
+	}
+};
+
+var markerInfo=new MarkerInfo('MarkerInfoModel');
+var markerEdit=new MarkerEditor('EditMarker');
+
+function btnClick(){
+	markerInfo.setTitle("MarkerTitle");
+	markerInfo.setSubTitle("This is Sub Title");
+	markerInfo.setDescription("Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.Here's the marker description.");
+	markerInfo.setImageSlider(['image1.JPG','image2.JPG']);
+	
+	markerEdit.setTitle('DefaultTitle');
+	markerEdit.setCost(50);
+	markerEdit.setDesc("some description some description some description some description some description");
+	markerEdit.setUrls("aUrl;Burl;Curl");
+	markerEdit.setMaxSlideNum(27);
+	var items=[{url:"icon/default_default.png",name:"icon1"},{url:"icon/event_default.png",name:"icon2"}];
+	markerEdit.setDropDownItems(items);
+	
+	console.log(markerEdit.getUrls());
+	console.log(markerEdit.getSlideNum());
+	console.log(markerEdit.getIconSelect());
+}
 
 
+
+
+
+	
 </script>
